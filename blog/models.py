@@ -29,6 +29,7 @@ class Post(models.Model):
     )
 
     PGTO = (
+    	('Em Aberto','Em Aberto'),
     	('Total','Total'),
     	('Carteirinha','Carteirinha'),
     	('Fantasia','Fantasia'),
