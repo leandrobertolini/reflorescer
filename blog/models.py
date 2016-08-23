@@ -43,7 +43,7 @@ class Post(models.Model):
     manequim 	= models.CharField(max_length=2, choices=SHIRT_SIZES)
     calcado 	= models.CharField(max_length=2, choices=SHOES)
     pagamento 	= models.CharField(max_length=20,choices=PGTO)
-    obs 		= models.TextField()
+    obs 		= models.TextField(blank=True,null=True)
 
     created_date = models.DateTimeField(
             default=timezone.now)
