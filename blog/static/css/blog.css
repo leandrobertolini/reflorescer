@@ -32,6 +32,12 @@ h1, h2, h3, h4 {
     color: #828282;
 }
 
+.list {
+    float: left;
+    color: #828282;
+    font-size:12px;
+}
+
 .save {
     float: right;
 }

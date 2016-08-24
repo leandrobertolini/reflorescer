@@ -4,7 +4,7 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 
 def members_list(request):
-    posts = Post.objects.order_by('created_date').order_by('published_date')
+    posts = Post.objects.order_by('created_date')
     return render(request, 'blog/members_list.html', {'posts': posts})
 
 def post_detail(request, pk):
