@@ -3,14 +3,27 @@
 {% block content %}
     <div class="post">
         {% if post.created_date %}
-            <div class="date">
-                {{ post.nome }}
+            <div class="list">
+                <b>Nome:</b> {{ post.nome }}
             </div>
             <br>
-            <div class="date">
-                {{ post.cidade }}
+            <div class="list">
+                <b>Cidade:</b> {{ post.cidade }}
+            </div>
+            <br>
+            <div class="list">
+                <b>Email:</b> {{ post.email }}
+            </div>
+            <br>
+            <div class="list">
+                <b>Manequim:</b> {{ post.manequim }}
+            </div>
+            <br>
+            <div class="list">
+                <b>Calçado:</b> {{ post.calcado }}
             </div>
         {% endif %}
+        <br><a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
