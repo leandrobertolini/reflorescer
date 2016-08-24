@@ -4,7 +4,7 @@
 		{% for post in posts %}
 		<div class="visited">
             <div>
-            	<h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.nome }} - {{ post.cidade }}</a></h1>
+            	<h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}">Componente {{ post.id }}: {{ post.nome }} - {{ post.cidade }}</a></h1>
             </div>
 		</div>
 		{% endfor %}

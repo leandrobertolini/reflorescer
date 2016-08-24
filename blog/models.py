@@ -39,7 +39,8 @@ class Post(models.Model):
 
     responsavel = models.ForeignKey('auth.User')
     nome 		= models.CharField(max_length=400)
-    email		= models.CharField(max_length=300)
+    telefone    = models.CharField(max_length=20, blank=True)
+    email       = models.EmailField(blank=True,null=True)
     cidade 		= models.CharField(max_length=200)
     manequim 	= models.CharField(max_length=2, choices=SHIRT_SIZES)
     calcado 	= models.CharField(max_length=2, choices=SHOES)

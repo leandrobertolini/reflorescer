@@ -12,6 +12,10 @@
             </div>
             <br>
             <div class="list">
+                <b>Telefone:</b> {{ post.telefone }}
+            </div>
+            <br>
+            <div class="list">
                 <b>Email:</b> {{ post.email }}
             </div>
             <br>
@@ -23,7 +27,10 @@
                 <b>Calçado:</b> {{ post.calcado }}
             </div>
         {% endif %}
-        <br><a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <br><br>
+        <button class="btn btn-default" type="submit"><a href="/"><< Voltar</a></button>
+        <br><br>
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Editar<span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>

@@ -1,21 +1,23 @@
 h1 a {
-    color: #AAAAAA;
+    color: #0000FF;
     font-family: 'Lobster';
+    font-size: 18px;
 }
 
 body {
+    background-color: #FF69B4;
     padding-left: 15px;
     padding-right: 15px;
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #FF69B4;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: #0000FF;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -34,9 +36,8 @@ h1, h2, h3, h4 {
 }
 
 .list {
-    float: left;
-    color: #828282;
-    font-size:12px;
+    color: #0000FF;
+    font-size:18px;
 }
 
 .save {
@@ -48,7 +49,7 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #0000FF;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
