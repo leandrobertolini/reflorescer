@@ -39,6 +39,9 @@ class Post(models.Model):
 
     responsavel = models.ForeignKey('auth.User')
     nome 		= models.CharField(max_length=400)
+    apelido     = models.CharField(max_length=200,blank=True,null=True)
+    rg          = models.CharField(max_length=20)
+    cpf         = models.CharField(max_length=20)
     telefone    = models.CharField(max_length=20, blank=True)
     email       = models.EmailField(blank=True,null=True)
     cidade 		= models.CharField(max_length=200)
@@ -49,8 +52,6 @@ class Post(models.Model):
 
     created_date = models.DateTimeField(
             default=timezone.now)
-    published_date = models.DateTimeField(
-            blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
