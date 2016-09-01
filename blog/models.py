@@ -1,9 +1,12 @@
 from django.db import models
 from django.utils import timezone
+from django.core.files.storage import FileSystemStorage
 
 # Create your models here.
 
 class Post(models.Model):
+
+    fs = FileSystemStorage(location='/Users/leandro.bertolini/Projects/reflorescer/fotos')
 
     SHIRT_SIZES = (
         ('P', 'Pequeno'),
@@ -35,6 +38,13 @@ class Post(models.Model):
     	('Fantasia','Fantasia'),
     )
 
+    ALAS = (
+        ('Reflorescer','Reflorescer'),
+        ('Roseira_Real','Roseira Real'),
+        ('Quebrada','Quebrada'),
+        ('Compositores','Compositores'),
+        ('Loucos_pela_Rosas','Loucos pela Rosas'),
+    )
 
 
     responsavel = models.ForeignKey('auth.User')
@@ -47,8 +57,11 @@ class Post(models.Model):
     cidade 		= models.CharField(max_length=200)
     manequim 	= models.CharField(max_length=2, choices=SHIRT_SIZES)
     calcado 	= models.CharField(max_length=2, choices=SHOES)
+    ala         = models.CharField(max_length=40, choices=ALAS)
+
     pagamento 	= models.CharField(max_length=20,choices=PGTO)
     obs 		= models.TextField(blank=True,null=True)
+    foto       = models.ImageField(storage=fs)
 
     created_date = models.DateTimeField(
             default=timezone.now)
