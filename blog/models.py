@@ -71,3 +71,10 @@ class Componentes(models.Model):
         return u'<img src="/static/fotos/%s" width="150" height="100" />' % self.image.name
 
     foto.allow_tags = True
+
+
+class Alas(models.Model):
+    nome = models.CharField(max_length=30)
+    componentes = models.CharField(max_length=3)
+    def __str__(self):
+        return self.nome

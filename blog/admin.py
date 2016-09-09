@@ -1,6 +1,7 @@
 
 from django.contrib import admin
 from .models import Componentes
+from .models import Alas
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -13,5 +14,10 @@ class PostAdmin(admin.ModelAdmin):
         obj.responsavel = request.user
         obj.save()
 
+class AlasAdmin(admin.ModelAdmin):
+    search_fields = ('nome',)
+    list_display = ('nome', 'componentes')
+
 # Register your models here.
 admin.site.register(Componentes, PostAdmin)
+admin.site.register(Alas,AlasAdmin)
