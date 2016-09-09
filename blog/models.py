@@ -4,7 +4,7 @@ from django.core.files.storage import FileSystemStorage
 
 
 # Create your models here.
-class Post(models.Model):
+class Componentes(models.Model):
 
     fs = FileSystemStorage(location='blog/static/fotos/')
 
@@ -60,14 +60,14 @@ class Post(models.Model):
 
     pagamento = models.CharField(max_length=20, choices=PGTO)
     obs = models.TextField(blank=True, null=True)
-    foto = models.ImageField(storage=fs)
+    image = models.ImageField(storage=fs)
 
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.nome
 
-    def image_tag(self):
-        return u'<img src="/static/fotos/%s" width="200" />' % self.foto.name
+    def foto(self):
+        return u'<img src="/static/fotos/%s" width="150" height="100" />' % self.image.name
 
-    image_tag.allow_tags = True
+    foto.allow_tags = True
