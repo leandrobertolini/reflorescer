@@ -5,3 +5,13 @@ db.sqlite3
 .DS_Store
 migrations
 blog/migrations
+
+blog/static/fotos/*
+
+db.sqlite3
+
+*sqlite3*
+
+*/bin
+*/lib
+*/pyvenv.cfg

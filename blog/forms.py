@@ -1,8 +1,15 @@
+
+from django.forms import SelectMultiple
 from django import forms
 from .models import Post
+
 
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('responsavel','nome','apelido','rg','cpf','cidade','telefone','email','manequim','calcado','pagamento','ala','obs','foto')
+        exclude = ('responsavel',)
+
+        widgets = {
+            'pagamento': SelectMultiple(attrs={'class': 'full-width'}),
+        }
