@@ -68,8 +68,7 @@ class Componentes(models.Model):
         return self.nome
 
     def foto(self):
-        return u'<img src="/static/fotos/%s" width="150" height="100" />' % self.image.name
-
+        return u'<a href="/static/fotos/%s" target="_blank"><img src="/static/fotos/%s" width="150" height="100" /></a>' % (self.image.name, self.image.name)
     foto.allow_tags = True
 
 
