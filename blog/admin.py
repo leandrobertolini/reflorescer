@@ -7,7 +7,7 @@ from .models import Alas
 class PostAdmin(admin.ModelAdmin):
     list_filter = ('ala','cidade','manequim')
     search_fields = ('nome',)
-    list_display = ('nome', 'ala', 'cidade', 'foto', 'pagamento')
+    list_display = ('nome', 'ala', 'cidade', 'foto', 'pagamento', 'carteirinha', 'obs')
     exclude = ('responsavel', 'created_date')
 
     def save_model(self, request, obj, form, change):
