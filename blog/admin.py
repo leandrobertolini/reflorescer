@@ -16,7 +16,7 @@ class PostAdmin(admin.ModelAdmin):
 
 class AlasAdmin(admin.ModelAdmin):
     search_fields = ('nome',)
-    list_display = ('nome', 'componentes')
+    list_display = ('nome', 'total_componentes')
 
 # Register your models here.
 admin.site.register(Componentes, PostAdmin)

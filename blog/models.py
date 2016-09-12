@@ -4,6 +4,12 @@ from django.core.files.storage import FileSystemStorage
 
 
 # Create your models here.
+class Alas(models.Model):
+    nome = models.CharField(max_length=30)
+    total_componentes = models.CharField(max_length=3)
+    def __str__(self):
+        return self.nome
+
 class Componentes(models.Model):
 
     fs = FileSystemStorage(location='blog/static/fotos/')
@@ -38,14 +44,6 @@ class Componentes(models.Model):
         ('Fantasia', 'Fantasia'),
     )
 
-    ALAS = (
-        ('Reflorescer', 'Reflorescer'),
-        ('Roseira_Real', 'Roseira Real'),
-        ('Quebrada', 'Quebrada'),
-        ('Compositores', 'Compositores'),
-        ('Loucos_pela_Rosas', 'Loucos pela Rosas'),
-    )
-
     responsavel = models.ForeignKey('auth.User')
     nome = models.CharField(max_length=400)
     apelido = models.CharField(max_length=200, blank=True, null=True)
@@ -56,11 +54,11 @@ class Componentes(models.Model):
     cidade = models.CharField(max_length=200)
     manequim = models.CharField(max_length=2, choices=SHIRT_SIZES)
     calcado = models.CharField(max_length=2, choices=SHOES)
-    ala = models.CharField(max_length=40, choices=ALAS)
+    ala = models.ForeignKey(Alas, null=True, blank=True)
 
     pagamento = models.CharField(max_length=20, choices=PGTO)
     obs = models.TextField(blank=True, null=True)
-    image = models.ImageField(storage=fs)
+    image = models.ImageField(storage=fs, null=True)
 
     created_date = models.DateTimeField(default=timezone.now)
 
@@ -72,8 +70,3 @@ class Componentes(models.Model):
     foto.allow_tags = True
 
 
-class Alas(models.Model):
-    nome = models.CharField(max_length=30)
-    componentes = models.CharField(max_length=3)
-    def __str__(self):
-        return self.nome
