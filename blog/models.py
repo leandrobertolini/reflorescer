@@ -44,6 +44,11 @@ class Componentes(models.Model):
         ('Fantasia', 'Fantasia'),
     )
 
+    CARTEIRINHA = {
+        ('Pendente','Pendente'),
+        ('Entregue','Entregue'),
+    }
+
     responsavel = models.ForeignKey('auth.User')
     nome = models.CharField(max_length=400)
     apelido = models.CharField(max_length=200, blank=True, null=True)
@@ -57,8 +62,9 @@ class Componentes(models.Model):
     ala = models.ForeignKey(Alas, null=True, blank=True)
 
     pagamento = models.CharField(max_length=20, choices=PGTO)
+    carteirinha = models.CharField(max_length=20, choices=CARTEIRINHA)
     obs = models.TextField(blank=True, null=True)
-    image = models.ImageField(storage=fs, null=True)
+    image = models.ImageField(storage=fs, blank=True)
 
     created_date = models.DateTimeField(default=timezone.now)
 
