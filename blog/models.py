@@ -11,14 +11,14 @@ class Alas(models.Model):
 
     nome = models.CharField(max_length=30)
     total_componentes = models.CharField(max_length=3)
-    img = models.ImageField(storage=fs, blank=True)
+    logo = models.ImageField(storage=fs, blank=True)
 
     def __str__(self):
         return self.nome
 
-    def logo(self):
-        return u'<a href="/static/logos/%s" target="_blank"><img src="/static/logos/%s" width="200" height="150" /></a>' % (self.img.name, self.img.name)
-    logo.allow_tags = True
+    def logo_ala(self):
+        return u'<a href="/static/logos/%s" target="_blank"><img src="/static/logos/%s" width="200" height="150" /></a>' % (self.logo.name, self.logo.name)
+    logo_ala.allow_tags = True
 
 class Componentes(models.Model):
 
@@ -39,15 +39,15 @@ class Componentes(models.Model):
     pagamento = models.CharField(max_length=20, choices=PGTO)
     carteirinha = models.CharField(max_length=20, choices=CARTEIRINHA)
     obs = models.TextField(blank=True, null=True)
-    image = models.ImageField(storage=fs, blank=True)
+    foto = models.ImageField(storage=fs, blank=True)
 
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.nome
 
-    def foto(self):
-        return u'<a href="/static/fotos/%s" target="_blank"><img src="/static/fotos/%s" width="150" height="100" /></a>' % (self.image.name, self.image.name)
-    foto.allow_tags = True
+    def foto_comp(self):
+        return u'<a href="/static/fotos/%s" target="_blank"><img src="/static/fotos/%s" width="150" height="100" /></a>' % (self.foto.name, self.foto.name)
+    foto_comp.allow_tags = True
 
 
