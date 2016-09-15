@@ -1,7 +1,7 @@
 
 from django.contrib import admin
-from .models import Componentes
-from .models import Alas
+from .models.componentes import Componentes
+from .models.alas import Alas
 
 
 class PostAdmin(admin.ModelAdmin):

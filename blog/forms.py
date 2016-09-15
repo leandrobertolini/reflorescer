@@ -1,7 +1,7 @@
 
 from django.forms import SelectMultiple
 from django import forms
-from .models import Componentes
+from .models.componentes import Componentes
 
 
 class PostForm(forms.ModelForm):
