@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.core.files.storage import FileSystemStorage
 from .choices import SHIRT_SIZES, SHOES, PGTO, CARTEIRINHA
-from .alas import Alas
+from .ala import Ala
 
-class Componentes(models.Model):
+class Componente(models.Model):
 
     fs = FileSystemStorage(location='blog/static/fotos/')
 
@@ -18,7 +18,7 @@ class Componentes(models.Model):
     cidade = models.CharField(max_length=200)
     manequim = models.CharField(max_length=2, choices=SHIRT_SIZES)
     calcado = models.CharField(max_length=2, choices=SHOES)
-    ala = models.ForeignKey(Alas, null=True, blank=True)
+    ala = models.ForeignKey(Ala, null=True, blank=True)
 
     pagamento = models.CharField(max_length=20, choices=PGTO)
     carteirinha = models.CharField(max_length=20, choices=CARTEIRINHA)

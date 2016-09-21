@@ -1,7 +1,7 @@
 
 from django.contrib import admin
-from .models.componentes import Componentes
-from .models.alas import Alas
+from .models.componente import Componente
+from .models.ala import Ala
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -19,5 +19,5 @@ class AlasAdmin(admin.ModelAdmin):
     list_display = ('nome', 'total_componentes','logo_ala')
 
 # Register your models here.
-admin.site.register(Componentes, PostAdmin)
-admin.site.register(Alas,AlasAdmin)
+admin.site.register(Componente, PostAdmin)
+admin.site.register(Ala,AlasAdmin)

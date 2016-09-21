@@ -1,13 +1,13 @@
 
 from django.forms import SelectMultiple
 from django import forms
-from .models.componentes import Componentes
+from .models.componente import Componente
 
 
 class PostForm(forms.ModelForm):
 
     class Meta:
-        model = Componentes
+        model = Componente
         exclude = ('responsavel',)
 
         widgets = {

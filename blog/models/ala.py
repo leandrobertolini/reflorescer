@@ -1,11 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.core.files.storage import FileSystemStorage
-from .choices import SHIRT_SIZES, SHOES, PGTO, CARTEIRINHA
-
 
 # Create your models here.
-class Alas(models.Model):
+class Ala(models.Model):
 
     fs = FileSystemStorage(location='blog/static/logos/')
 
