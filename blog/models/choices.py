@@ -34,3 +34,8 @@ CARTEIRINHA = {
     ('Pendente','Pendente'),
     ('Entregue','Entregue'),
 }
+
+PRESENCA = {
+    ('Presente','Presente'),
+    ('Ausente','Ausente')
+}
