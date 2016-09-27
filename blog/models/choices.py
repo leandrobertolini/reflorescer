@@ -1,13 +1,13 @@
 # coding: utf-8
 
-SHIRT_SIZES = (
+SHIRT_SIZES = {
     ('P', 'Pequeno'),
     ('M', 'Medio'),
     ('G', 'Grande'),
     ('GG', 'Extra Grande'),
-)
+}
 
-SHOES = (
+SHOES = {
     ('33', '33'),
     ('34', '34'),
     ('35', '35'),
@@ -21,14 +21,14 @@ SHOES = (
     ('43', '43'),
     ('44', '44'),
     ('45', '45'),
-)
+}
 
-PGTO = (
+PGTO = {
     ('Em Aberto', 'Em Aberto'),
     ('Total', 'Total'),
     ('Carteirinha', 'Carteirinha'),
     ('Fantasia', 'Fantasia'),
-)
+}
 
 CARTEIRINHA = {
     ('Pendente','Pendente'),
@@ -38,4 +38,10 @@ CARTEIRINHA = {
 PRESENCA = {
     ('Presente','Presente'),
     ('Ausente','Ausente')
+}
+
+STATUS = {
+    ('Ativo','Ativo'),
+    ('Inativo','Inativo'),
+    ('Lista de espera','Lista de espera')
 }

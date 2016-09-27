@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.files.storage import FileSystemStorage
-from .choices import SHIRT_SIZES, SHOES, PGTO, CARTEIRINHA
+from .choices import SHIRT_SIZES, SHOES, PGTO, CARTEIRINHA, STATUS
 from .ala import Ala
 
 class Componente(models.Model):
@@ -26,6 +26,8 @@ class Componente(models.Model):
     foto = models.ImageField(storage=fs, blank=True)
 
     created_date = models.DateTimeField(default=timezone.now)
+
+    status = models.CharField(max_length=15, blank=True, null=True, choices=STATUS)
 
     def __str__(self):
         return self.nome
