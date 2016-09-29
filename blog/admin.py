@@ -19,7 +19,7 @@ class AlasAdmin(admin.ModelAdmin):
 class ComponenteAdmin(admin.ModelAdmin):
     list_filter = ('ala','cidade','manequim')
     search_fields = ('nome',)
-    list_display = ('nome', 'ala', 'cidade', 'foto_comp', 'pagamento', 'carteirinha', 'status', 'obs')
+    list_display = ('nome','nascimento', 'ala', 'cidade', 'foto_comp', 'pagamento', 'carteirinha', 'status', 'obs')
     exclude = ('responsavel', 'created_date')
 
     def save_model(self, request, obj, form, change):

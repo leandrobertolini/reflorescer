@@ -11,6 +11,7 @@ class Componente(models.Model):
 
     responsavel = models.ForeignKey('auth.User')
     nome = models.CharField(max_length=400)
+    nascimento = models.DateField(null=True, blank=True)
     apelido = models.CharField(max_length=200, blank=True, null=True)
     rg = models.CharField(max_length=20, blank=True)
     cpf = models.CharField(max_length=20, blank=True)
