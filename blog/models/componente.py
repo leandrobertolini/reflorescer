@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.db import models
 from django.utils import timezone
 from django.core.files.storage import FileSystemStorage
@@ -11,17 +12,17 @@ class Componente(models.Model):
     responsavel = models.ForeignKey('auth.User')
     nome = models.CharField(max_length=400)
     apelido = models.CharField(max_length=200, blank=True, null=True)
-    rg = models.CharField(max_length=20)
-    cpf = models.CharField(max_length=20)
-    telefone = models.CharField(max_length=20, blank=True)
+    rg = models.CharField(max_length=20, blank=True)
+    cpf = models.CharField(max_length=20, blank=True)
+    telefone = models.CharField(max_length=20)
     email = models.EmailField(blank=True, null=True)
     cidade = models.CharField(max_length=200)
-    manequim = models.CharField(max_length=2, choices=SHIRT_SIZES)
-    calcado = models.CharField(max_length=2, choices=SHOES)
-    ala = models.ForeignKey(Ala, null=True, blank=True)
+    manequim = models.CharField(max_length=2, choices=SHIRT_SIZES, blank=True)
+    calcado = models.CharField(max_length=2, choices=SHOES, blank=True)
+    ala = models.ForeignKey(Ala, null=True)
 
-    pagamento = models.CharField(max_length=20, choices=PGTO)
-    carteirinha = models.CharField(max_length=20, choices=CARTEIRINHA)
+    pagamento = models.CharField(max_length=20, choices=PGTO, blank=True)
+    carteirinha = models.CharField(max_length=20, choices=CARTEIRINHA, blank=True)
     obs = models.TextField(blank=True, null=True)
     foto = models.ImageField(storage=fs, blank=True)
 

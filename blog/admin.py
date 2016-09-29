@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.contrib import admin
 from django.db import connection
 from .models.componente import Componente
