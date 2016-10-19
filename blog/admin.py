@@ -42,7 +42,7 @@ class ComponenteAdmin(admin.ModelAdmin):
 
 
 class EnsaioAdmin(admin.ModelAdmin):
-    list_filter = ('presenca',)
+    list_filter = ('presenca', 'data_ensaio', 'componente')
     list_display = ('get_componentes', 'presenca', 'ala', 'data_ensaio')
     filter_horizontal = ('componente',)
 
