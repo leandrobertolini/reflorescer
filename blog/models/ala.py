@@ -1,12 +1,14 @@
 # coding: utf-8
 from django.db import models
-from django.utils import timezone
 from django.core.files.storage import FileSystemStorage
+
 
 # Create your models here.
 class Ala(models.Model):
 
     fs = FileSystemStorage(location='blog/static/logos/')
+
+    responsavel = models.ForeignKey('auth.User')
 
     nome = models.CharField(max_length=30)
     total_componentes = models.CharField(max_length=3)

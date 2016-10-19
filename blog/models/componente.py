@@ -5,6 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from .choices import SHIRT_SIZES, SHOES, PGTO, CARTEIRINHA, STATUS
 from .ala import Ala
 
+
 class Componente(models.Model):
 
     fs = FileSystemStorage(location='blog/static/fotos/')

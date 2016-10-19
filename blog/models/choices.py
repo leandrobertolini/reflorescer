@@ -31,17 +31,17 @@ PGTO = {
 }
 
 CARTEIRINHA = {
-    ('Pendente','Pendente'),
-    ('Entregue','Entregue'),
+    ('Pendente', 'Pendente'),
+    ('Entregue', 'Entregue'),
 }
 
 PRESENCA = {
-    ('Presente','Presente'),
-    ('Ausente','Ausente')
+    ('Presente', 'Presente'),
+    ('Ausente', 'Ausente')
 }
 
 STATUS = {
-    ('Ativo','Ativo'),
-    ('Inativo','Inativo'),
-    ('Lista de espera','Lista de espera')
+    ('Ativo', 'Ativo'),
+    ('Inativo', 'Inativo'),
+    ('Lista de espera', 'Lista de espera')
 }
